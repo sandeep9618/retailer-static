@@ -1,0 +1,4 @@
+.nav-container {
+  display: flex;
+  gap: clamp(14px, 2vw, 20px);
+}
