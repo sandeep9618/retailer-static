@@ -5,7 +5,7 @@ export default function TextCarousel() {
   const texts = [
     <p
       key="1"
-      className="text-orange-500  font-[700] text-[clamp(20px,2vw,42px)]"
+      className="text-[#FF8A00] font-[700] text-[clamp(20px,2vw,42px)]"
     >
       LOCAL RETAILER - <span className="text-white">One Platform</span>
     </p>,

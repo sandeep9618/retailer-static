@@ -17,9 +17,9 @@ export const Navbar = () => {
       </div>
       <div className="hidden md:flex nav-container">
         {[
-          { href: "#about", label: "About us" },
-          { href: "#services", label: "What we provide" },
-          { href: "#why", label: "Why Local Retailer" },
+          { href: "#about-us", label: "About us" },
+          { href: "#what-we-provide", label: "What we provide" },
+          { href: "#why-local-retailer", label: "Why Local Retailer" },
           { href: "#faq", label: "FAQ's" },
         ].map((item) => (
           <a

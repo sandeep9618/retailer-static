@@ -40,6 +40,11 @@
   align-items: center;
   justify-content: center;
 }
+.stats-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
 .stats-content h3 {
   margin: 0;
@@ -48,5 +53,6 @@
 
 .stats-content p {
   font-size: 14px;
-  opacity: 0.9;
+  /* opacity: 0.9; */
+  font-weight: 200;
 }

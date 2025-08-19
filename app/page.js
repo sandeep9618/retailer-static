@@ -3,6 +3,9 @@ import TextCarousel from "@/components/TextCarousel/TextCarousel";
 import Image from "next/image";
 import "./page.css";
 import React from "react";
+import AboutUs from "@/widgets/AboutUs/AboutUs";
+import WhyLocalRetailer from "@/widgets/WhyLocalRetailer/WhyLocalRetailer";
+import WhatWeProvide from "@/widgets/WhatWeProvide/WhatWeProvide";
 
 const data = [
   {
@@ -29,9 +32,16 @@ function StatsSection() {
         <React.Fragment key={index}>
           <div className="stats-card">
             <div className="stats-content">
-              <div>
-                {/* <Image alt="m-icon" src="/public/logos/mockup_icon.png" /> */}
-                <h3>{item.title}</h3>
+              <div className="relative">
+                <Image
+                  alt="m-icon"
+                  src="/logos/mockup_icon.png"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-auto h-[60px] absolute top-[-25px] left-[-20px]"
+                />
+                <h3 className="z-10 relative">{item.title}</h3>
               </div>
               <p>{item.description}</p>
             </div>
@@ -45,40 +55,51 @@ function StatsSection() {
 
 export default function Home() {
   return (
-    <div className="bg-[#0A2A66]">
-      {/* Navbar */}
-      <Navbar />
-      {/* Hero Section */}
-      <section className="text-white px-10 py-16 flex flex-col md:flex-row items-stretch">
-        {/* Left Column */}
-        <div className="w-full md:w-1/2 flex flex-col justify-evenly gap-[20px]">
-          <p className="text-[clamp(16px,2vw,26px)]">
-            Pharmacies today are facing intense competition from online
-            platforms and large pharmacy chains.
-          </p>
+    <div>
+      <div className="bg-[#0A2A66] pb-1">
+        {/* Navbar */}
+        <Navbar />
+        {/* Hero Section */}
+        <section className="text-white px-10 py-16 flex flex-col md:flex-row items-stretch">
+          {/* Left Column */}
+          <div className="w-full md:w-1/2 flex flex-col justify-evenly gap-[20px]">
+            <p className="text-[clamp(16px,2vw,26px)]">
+              Pharmacies today are facing intense competition from online
+              platforms and large pharmacy chains.
+            </p>
 
-          <TextCarousel />
+            <TextCarousel />
 
-          <button className="bg-white text-black px-10 py-3 rounded-full font-500 shadow-md hover:shadow-lg self-start">
-            Register Now
-          </button>
-        </div>
+            <button className="bg-white text-black px-10 py-3 rounded-full font-500 shadow-md hover:shadow-lg self-start">
+              Register Now
+            </button>
+          </div>
 
-        {/* Right Column */}
-        <div className="w-full md:w-1/2 relative min-h-[300px]">
-          <Image
-            src="/logos/mockup_one.png"
-            alt="Dashboard"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-auto"
-          />
-        </div>
+          {/* Right Column */}
+          <div className="w-full md:w-1/2 relative min-h-[300px]">
+            <Image
+              src="/logos/mockup_one.png"
+              alt="Dashboard"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-auto"
+            />
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <StatsSection />
+      </div>
+      <section className="p-[60px] pb-0" id="about-us">
+        <AboutUs />
       </section>
-
-      {/* Stats Section */}
-      <StatsSection />
+      <section className="px-[60px] py-[40px]" id="why-local-retailer">
+        <WhyLocalRetailer />
+      </section>
+      <section className="px-[60px] pb-[60px]" id="what-we-provide">
+        <WhatWeProvide />
+      </section>
     </div>
   );
 }
